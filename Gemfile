@@ -53,10 +53,10 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "rspec-rails"
   gem "cucumber-rails", require: false
-  gem "shoulda-matchers",
-      git: "https://github.com/thoughtbot/shoulda-matchers.git",
-      branch: "rails-5"
+  gem "shoulda-matchers"
   gem "factory_bot_rails"
+  gem "devise"
+  gem "email_spec"
 end
 
 group :development do
