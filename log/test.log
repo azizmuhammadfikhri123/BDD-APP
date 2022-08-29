@@ -1986,3 +1986,511 @@ Processing by BooksController#index as HTML
   Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2802)
 Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.6ms | Allocations: 3710)
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by BooksController#index as HTML
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.0ms | Allocations: 2544)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 837)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 3850)
+  Rendered layout layouts/application.html.erb (Duration: 70.2ms | Allocations: 39291)
+Completed 200 OK in 101ms (Views: 77.8ms | ActiveRecord: 5.7ms | Allocations: 52902)
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 214)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 203)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2093)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 3816)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 5066)
+Started POST "/users" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"tester@testdomain.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["email", "tester@testdomain.test"], ["encrypted_password", "$2a$04$f3U17o2x28w2iewwFdWHiO7uql8YvpXoPukuh4OryaqbyuorHHs2i"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "do_7gz1LhAVCnsV67f1U"], ["confirmed_at", nil], ["confirmation_sent_at", "2022-08-29 03:46:35.553437"], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", nil], ["locked_at", nil], ["created_at", "2022-08-29 03:46:35.553216"], ["updated_at", "2022-08-29 03:46:35.553216"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/mailer/confirmation_instructions.html.erb (Duration: 2.2ms | Allocations: 361)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 8.4ms
+Delivered mail 630c369b8cd6d_4657d1b0265a@aziz.mail (6.6ms)
+Date: Mon, 29 Aug 2022 10:46:35 +0700
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: tester@testdomain.test
+Message-ID: <630c369b8cd6d_4657d1b0265a@aziz.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome tester@testdomain.test!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=do_7gz1LhAVCnsV67f1U">Confirm my account</a></p>
+
+Redirected to http://www.example.com/
+Completed 302 Found in 42ms (ActiveRecord: 1.9ms | Allocations: 10325)
+Started GET "/" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by BooksController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 349)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 184)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1215)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2822)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 3480)
+Started GET "/users/confirmation?confirmation_token=[FILTERED]" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["confirmation_token", "do_7gz1LhAVCnsV67f1U"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["confirmed_at", "2022-08-29 03:46:35.614676"], ["updated_at", "2022-08-29 03:46:35.615165"], ["id", 12]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 9ms (ActiveRecord: 1.3ms | Allocations: 2387)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 184)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1216)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2824)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3485)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["email", "tester@testdomain.test"], ["encrypted_password", "$2a$04$xr7b5T/vq98Wi7bf45l.K..aQkv7OB7RQwPn.Ijv3EbG1PjkRNNXa"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", nil], ["confirmed_at", "2022-08-29 03:46:35.670642"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", nil], ["locked_at", nil], ["created_at", "2022-08-29 03:46:35.674315"], ["updated_at", "2022-08-29 03:46:35.674315"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by BooksController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 228)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 184)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1211)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2832)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 3487)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"tester@testdomain.test", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2022-08-29 03:46:35.708494"], ["last_sign_in_at", "2022-08-29 03:46:35.708494"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2022-08-29 03:46:35.708758"], ["id", 13]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 12ms (ActiveRecord: 1.0ms | Allocations: 1768)
+Started GET "/" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = $1[0m  [["user_id", 13]]
+  Rendered books/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1831)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 3556)
+Completed 200 OK in 35ms (Views: 12.0ms | ActiveRecord: 3.0ms | Allocations: 6741)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["email", "tester@testdomain.test"], ["encrypted_password", "$2a$04$sO0PTv3I9Q6Vj0yfaISK6OOhbVrmROyZ7j7QUnLIoFv.bW1KnXSmG"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", nil], ["confirmed_at", "2022-08-29 03:46:35.760925"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", nil], ["locked_at", nil], ["created_at", "2022-08-29 03:46:35.764677"], ["updated_at", "2022-08-29 03:46:35.764677"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by BooksController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 229)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 184)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1211)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2819)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 3493)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"tester@testdomain.test", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2022-08-29 03:46:35.799480"], ["last_sign_in_at", "2022-08-29 03:46:35.799480"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2022-08-29 03:46:35.799788"], ["id", 14]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 1.6ms | Allocations: 1527)
+Started GET "/" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = $1[0m  [["user_id", 14]]
+  Rendered books/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 263)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 1828)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.7ms | Allocations: 2539)
+Started GET "/" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = $1[0m  [["user_id", 14]]
+  Rendered books/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 245)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 1808)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 1.2ms | Allocations: 2507)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["email", "tester@testdomain.test"], ["encrypted_password", "$2a$04$NtWUOgqj1B16wHPt8Dssxu3NJQq.mXzLJZt1lsBwfCuc87h4cM8aC"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", nil], ["confirmed_at", "2022-08-29 03:46:35.838796"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", nil], ["locked_at", nil], ["created_at", "2022-08-29 03:46:35.843276"], ["updated_at", "2022-08-29 03:46:35.843276"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by BooksController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 228)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 184)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1211)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2819)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 3486)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"tester@testdomain.test", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2022-08-29 03:46:35.874492"], ["last_sign_in_at", "2022-08-29 03:46:35.874492"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2022-08-29 03:46:35.874776"], ["id", 15]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms | Allocations: 1543)
+Started GET "/" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered books/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 263)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 1828)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.6ms | Allocations: 2560)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("user_id", "name", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 15], ["name", "Don Quixote"], ["author", "Miguel de Cervantes"], ["created_at", "2022-08-29 03:46:35.900781"], ["updated_at", "2022-08-29 03:46:35.900781"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("user_id", "name", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 15], ["name", "Moby Dick"], ["author", "Herman Melville"], ["created_at", "2022-08-29 03:46:35.903492"], ["updated_at", "2022-08-29 03:46:35.903492"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered books/_book.html.erb (Duration: 1.2ms | Allocations: 252)
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered books/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1164)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 2802)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 1.1ms | Allocations: 3722)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["email", "tester@testdomain.test"], ["encrypted_password", "$2a$04$BaZy7CpeCUpNAjVU.6aLKeOTeLmPBZr3SYjxs5RcYHHqZPgwsPiyq"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", nil], ["confirmed_at", "2022-08-29 03:46:35.928202"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", nil], ["locked_at", nil], ["created_at", "2022-08-29 03:46:35.931741"], ["updated_at", "2022-08-29 03:46:35.931741"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by BooksController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 228)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 184)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1211)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2825)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 3490)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"tester@testdomain.test", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2022-08-29 03:46:35.963244"], ["last_sign_in_at", "2022-08-29 03:46:35.963244"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2022-08-29 03:46:35.963564"], ["id", 16]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms | Allocations: 1519)
+Started GET "/" for 127.0.0.1 at 2022-08-29 10:46:35 +0700
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered books/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 263)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1828)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.5ms | Allocations: 2554)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-08-29 11:04:02 +0700
+Processing by BooksController#index as HTML
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.0ms | Allocations: 2544)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-29 11:04:02 +0700
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 837)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 12.9ms | Allocations: 3850)
+  Rendered layout layouts/application.html.erb (Duration: 75.5ms | Allocations: 39338)
+Completed 200 OK in 112ms (Views: 85.2ms | ActiveRecord: 8.1ms | Allocations: 52964)
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-08-29 11:04:02 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 214)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 2.9ms | Allocations: 203)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2093)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3816)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 5075)
+Started POST "/users" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"tester@testdomain.test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["email", "tester@testdomain.test"], ["encrypted_password", "$2a$04$xc8A7F/3tB/fr97K6TA/gu33SbDBGAnw9jBdAwSDjn6tAfybFRqh."], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "nZu4tu8rVEyyu-U_c1-S"], ["confirmed_at", nil], ["confirmation_sent_at", "2022-08-29 04:04:03.029535"], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", nil], ["locked_at", nil], ["created_at", "2022-08-29 04:04:03.029333"], ["updated_at", "2022-08-29 04:04:03.029333"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/mailer/confirmation_instructions.html.erb (Duration: 1.3ms | Allocations: 361)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 9.7ms
+Delivered mail 630c3ab3c6a9_4975d1b0738a8@aziz.mail (10.9ms)
+Date: Mon, 29 Aug 2022 11:04:03 +0700
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: tester@testdomain.test
+Message-ID: <630c3ab3c6a9_4975d1b0738a8@aziz.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome tester@testdomain.test!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=nZu4tu8rVEyyu-U_c1-S">Confirm my account</a></p>
+
+Redirected to http://www.example.com/
+Completed 302 Found in 43ms (ActiveRecord: 2.3ms | Allocations: 10325)
+Started GET "/" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by BooksController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 358)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 184)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1215)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2822)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 3492)
+Started GET "/users/confirmation?confirmation_token=[FILTERED]" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["confirmation_token", "nZu4tu8rVEyyu-U_c1-S"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["confirmed_at", "2022-08-29 04:04:03.090218"], ["updated_at", "2022-08-29 04:04:03.090695"], ["id", 17]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 9ms (ActiveRecord: 1.6ms | Allocations: 2378)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 184)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1216)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2824)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 3491)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["email", "tester@testdomain.test"], ["encrypted_password", "$2a$04$WTIfTvYdjCK6WtngfRzKZ.4E9nIsUAy0lROMR/45wDJwr1kYyuLOy"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", nil], ["confirmed_at", "2022-08-29 04:04:03.112458"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", nil], ["locked_at", nil], ["created_at", "2022-08-29 04:04:03.118021"], ["updated_at", "2022-08-29 04:04:03.118021"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by BooksController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 228)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 184)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1211)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2832)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 3523)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"tester@testdomain.test", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2022-08-29 04:04:03.185271"], ["last_sign_in_at", "2022-08-29 04:04:03.185271"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2022-08-29 04:04:03.185563"], ["id", 18]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 9ms (ActiveRecord: 1.1ms | Allocations: 1774)
+Started GET "/" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = $1[0m  [["user_id", 18]]
+  Rendered books/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1831)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 3556)
+Completed 200 OK in 29ms (Views: 11.2ms | ActiveRecord: 3.4ms | Allocations: 6733)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["email", "tester@testdomain.test"], ["encrypted_password", "$2a$04$3Btfa5ttn6Nw..Sm1BEz4uJSre6g7MkK1NBP034C.UU5g2WMM28Dy"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", nil], ["confirmed_at", "2022-08-29 04:04:03.229367"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", nil], ["locked_at", nil], ["created_at", "2022-08-29 04:04:03.234414"], ["updated_at", "2022-08-29 04:04:03.234414"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by BooksController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 229)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 184)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1211)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2819)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 3457)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"tester@testdomain.test", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2022-08-29 04:04:03.268476"], ["last_sign_in_at", "2022-08-29 04:04:03.268476"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2022-08-29 04:04:03.268767"], ["id", 19]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms | Allocations: 1536)
+Started GET "/" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = $1[0m  [["user_id", 19]]
+  Rendered books/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 263)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 1828)
+Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 0.8ms | Allocations: 2530)
+Started GET "/" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = $1[0m  [["user_id", 19]]
+  Rendered books/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 245)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 1808)
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.9ms | Allocations: 2504)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["email", "tester@testdomain.test"], ["encrypted_password", "$2a$04$cWCNAW2l9yxUnhZShOMue.1Df1.E8lKryc6pOZJBXmChqOx.eLH8i"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", nil], ["confirmed_at", "2022-08-29 04:04:03.306736"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", nil], ["locked_at", nil], ["created_at", "2022-08-29 04:04:03.310463"], ["updated_at", "2022-08-29 04:04:03.310463"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by BooksController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 228)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 184)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1211)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2819)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 3489)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"tester@testdomain.test", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2022-08-29 04:04:03.344893"], ["last_sign_in_at", "2022-08-29 04:04:03.344893"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2022-08-29 04:04:03.345231"], ["id", 20]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms | Allocations: 1515)
+Started GET "/" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered books/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 263)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 1828)
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 0.9ms | Allocations: 2555)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.7ms)[0m  [1m[32mINSERT INTO "books" ("user_id", "name", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 20], ["name", "Don Quixote"], ["author", "Miguel de Cervantes"], ["created_at", "2022-08-29 04:04:03.374255"], ["updated_at", "2022-08-29 04:04:03.374255"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("user_id", "name", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 20], ["name", "Moby Dick"], ["author", "Herman Melville"], ["created_at", "2022-08-29 04:04:03.377615"], ["updated_at", "2022-08-29 04:04:03.377615"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered books/_book.html.erb (Duration: 0.9ms | Allocations: 252)
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered books/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1164)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2801)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.7ms | Allocations: 3709)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["email", "tester@testdomain.test"], ["encrypted_password", "$2a$04$PSJf0kRxOBtACGCpK7iuTOa7o0NMTNXBkaidWtlPLxCPbkt2w6qUq"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", nil], ["confirmed_at", "2022-08-29 04:04:03.399926"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["failed_attempts", 0], ["unlock_token", nil], ["locked_at", nil], ["created_at", "2022-08-29 04:04:03.404188"], ["updated_at", "2022-08-29 04:04:03.404188"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by BooksController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 228)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 184)
+  Rendered /home/aziz/.rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1211)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2826)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 3491)
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"tester@testdomain.test", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "tester@testdomain.test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2022-08-29 04:04:03.435398"], ["last_sign_in_at", "2022-08-29 04:04:03.435398"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2022-08-29 04:04:03.435685"], ["id", 21]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 3.1ms | Allocations: 1531)
+Started GET "/" for 127.0.0.1 at 2022-08-29 11:04:03 +0700
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered books/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 263)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1828)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.7ms | Allocations: 2545)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
