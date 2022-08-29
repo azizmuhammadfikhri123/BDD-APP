@@ -10,7 +10,8 @@ Given("I have populated my inventory with several books") do
                         :author => "Herman Melville")
 end
 
-Then("I should see the list of my books") do
+Then(/^I should see the list of my books$/) do
+    puts page.body # Debug step: Display the HTML page.
     expect(page).to have_content("Don Quixote")
     expect(page).to have_content("Moby Dick")
 end
