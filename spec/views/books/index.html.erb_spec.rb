@@ -4,7 +4,7 @@ RSpec.describe "books/index", type: :view do
   before(:each) do
     assign(:books, [
       Book.create!(
-        user: nil,
+        user: "aziz",
         name: "Name",
         author: "Author"
       ),
